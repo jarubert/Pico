@@ -11,10 +11,9 @@
 
 %union {
 	char* cadeia;
-	int val_int;
-	float val_float;
 	struct _node * no;
 }
+
 
 /*Faltava declarar os tipos dos tokens para o yacc conseguir converter
 os mesmos para $$ e $1,$2,... os warnings ao compilar são das regras
