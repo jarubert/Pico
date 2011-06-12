@@ -10,41 +10,48 @@
 %}
 
 %union {
-  char* cadeia;
-  struct _node * no;
+	char* cadeia;
+	int val_int;
+	float val_float;
+	struct _node * no;
 }
 
+/*Faltava declarar os tipos dos tokens para o yacc conseguir converter
+os mesmos para $$ e $1,$2,... os warnings ao compilar são das regras
+ainda não terminadas.*/
 
-%token IDF
-%token INT
-%token DOUBLE
-%token FLOAT
-%token CHAR
-%token QUOTE
-%token DQUOTE
-%token LE
-%token GE
-%token EQ
-%token NE
-%token AND
-%token OR
-%token NOT
-%token IF
-%token THEN
-%token ELSE
-%token WHILE
+%token<cadeia> IDF
+%token<no> INT
+%token<no> DOUBLE
+%token<no> FLOAT
+%token<no> CHAR
+%token<no> QUOTE
+%token<no> DQUOTE
+%token<no> LE
+%token<no> GE
+%token<no> EQ
+%token<no> NE
+%token<no> AND
+%token<no> OR
+%token<no> NOT
+%token<no> IF
+%token<no> THEN
+%token<no> ELSE
+%token<no> WHILE
 %token<cadeia> INT_LIT
-%token F_LIT
-%token END
-%token TRUE
-%token FALSE
+%token<cadeia> F_LIT
+%token<no> END
+%token<no> TRUE
+%token<no> FALSE
 
 %type<no> code 
 %type<no> declaracoes
 %type<no> declaracao
 %type<no> listadeclaracao
+%type<no> listadupla
 %type<no> tipo
 %type<no> tipounico
+%type<no> tipolista
 %type<no> lvalue
 %type<no> listaexpr
 %type<no> expbool
@@ -52,6 +59,11 @@
 %type<no> comando
 %type<no> enunciado
 %type<no> expr
+%type<no> '='
+%type<no> '('
+%type<no> ')'
+%type<no> chamaproc
+
 
 
 %start code
