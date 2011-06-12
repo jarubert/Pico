@@ -1,0 +1,9 @@
+identificador
+i_de1n#tinf__0_
+CONSTANTE
+CON012__122
+123
+1
+1.0
+1.0e12
+123.0321E-14

@@ -1,0 +1,6 @@
+int
+double
+real
+char
+true
+false
